@@ -12,12 +12,12 @@ yubikey_ctx_st ctx;
 char otp[YUBIKEY_OTP_MAXSIZE];
 char *pos;
 
-#define BLINKPIN	 13
-#define TOUCHPIN	  7
-#define THRESHOLD	  2
+#define BLINKPIN   13
+#define TOUCHPIN    A9
+#define THRESHOLD   2
 
-#define	TIME_POLL	100	// poll "key" every 100 ms
-#define	TIME_SEND	 10	// send kb codes every 10 ms
+#define TIME_POLL 100 // poll "key" every 100 ms
+#define TIME_SEND  10 // send kb codes every 10 ms
 
 Task taskKey(TIME_POLL, checkKey);
 Task taskKB (TIME_SEND, sendKey);
@@ -40,7 +40,7 @@ void checkKey(Task* me) {
 
   yubikey_incr_timestamp(&ctx);
 
-  if (readCapacitivePin(TOUCHPIN) > 1) {
+  if (touchRead(TOUCHPIN) > 1000) {
     key_off = 0;
     key_press = 0;
     key_on += 1;
@@ -112,9 +112,9 @@ void gen_static(void) {
 
 /*************************************/
 
-/*	
-**	Following code is from
-**	http://playground.arduino.cc/Code/CapacitiveSensor
+/*  
+**  Following code is from
+**  http://playground.arduino.cc/Code/CapacitiveSensor
 */
 
 // readCapacitivePin
