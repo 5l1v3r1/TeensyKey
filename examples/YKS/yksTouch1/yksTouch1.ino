@@ -1,7 +1,7 @@
-// simple YubiKey generator for Arduino 1.0.x
+// simple YubiKey generator for Teensy 3.x
 //
 // read AES key, counter, public and private ID from EEPROM
-// use touch sensor on Pin 7 as key press
+// use touch sensor on Pin A9 as key press
 
 #include "YkCore.h"
 #include "YkSim.h"
