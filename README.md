@@ -1,4 +1,4 @@
-arduino-yksim
+TeensyKey
 =============
 
 Simulate Yubikey with Teensy (Tested on Teensy 3.0)
