@@ -12,10 +12,10 @@ Upload the code to your Teensy to initialize the EEPROM. This needs to be done o
 yksTouch1
 ---------
 
-Upload the code into your Teensy and stick an ordinary paper clip into pin D7.
+Upload the code into your Teensy and stick an ordinary paper clip into pin A9.
 This will turn your Teensy into an USB keyboard that emits keyboard scan codes whenever you touch the paper clip.
 Every time you touch the paper clip for a short time, a unique new Yubikey compatible OTP will be 'typed' by the Teensy.
-If you press the paper clip for a longer time, the static, secret password will by 'typed' by the Teensy.
+If you press the paper clip for a longer time, the static, secret password will be 'typed' by the Teensy.
 
 
 
