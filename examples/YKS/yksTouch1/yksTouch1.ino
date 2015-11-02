@@ -45,8 +45,6 @@ void checkKey(Task* me) {
     key_press = 0;
     key_on += 1;
     digitalWrite(BLINKPIN, HIGH);
-    Keyboard.write(touchRead(TOUCHPIN));
-    delay(100);
   } else {
     if (key_on > THRESHOLD) key_press = key_on;
     key_on = 0;
@@ -57,7 +55,7 @@ void checkKey(Task* me) {
   if ((key_press > 0) && (key_off > THRESHOLD)) {
     payload(key_press);
     key_press = 0;
-    delay(100);
+    
   }
 }
 
@@ -80,7 +78,7 @@ void sendKey(Task* me) {
 void payload(int duration) {
   *otp = '\0';
   if (duration <= 10) gen_token();
-  if (duration >= 15) gen_static();
+  if (duration >= 11) gen_static();
 
 /*
   Keyboard.begin();
